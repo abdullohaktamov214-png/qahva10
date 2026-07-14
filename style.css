@@ -1,0 +1,424 @@
+/*   < !--============================================================AMALIYOT LOYIHASI: QAYNOQ Coffee landing page Bu sahifa quyidagi CSS mavzularini o'z ichiga oladi:
+ color,
+  background-color,
+  width,
+  height,
+  border,
+  border-radius,
+  padding,
+  margin,
+  transition,
+  transform,
+  box-shadow,
+  text-shadow,
+  hover Har bir CSS qoidasi tepasida o'sha mavzu izohlangan.
+ Topshiriq: kodni o'qing, ranglarni va o' lchamlarni o'zgartirib, natijani kuzating. Keyin o' zingiz qayta yozing !============================================================--> */
+
+/* ===== Umumiy tozalash ===== */
+* {
+  margin: 0;
+  /* MARGIN: barcha elementlarning tashqi bo'shlig'ini 0 qiladi */
+  padding: 0;
+  /* PADDING: barcha elementlarning ichki bo'shlig'ini 0 qiladi */
+  box-sizing: border-box;
+  font-family: 'Trebuchet MS', 'Segoe UI', system-ui, sans-serif;
+}
+
+/* ===== BACKGROUND-COLOR + COLOR: butun sahifa foni va matn rangi ===== */
+body {
+  background-color: #faf4ea;
+  /* sahifaning krem fon rangi */
+  color: #2a1c14;
+  /* asosiy matn rangi (to'q jigarrang) */
+  line-height: 1.6;
+}
+
+/* Markazga joylaydigan idish */
+.container {
+  width: 90%;
+  /* WIDTH: ota-element kengligining 90% i */
+  max-width: 1080px;
+  /* juda kengaymasligi uchun cheklov */
+  margin: 0 auto;
+  /* MARGIN: 0 auto — blokni gorizontal markazga oladi */
+}
+
+/* ============================================================
+       NAVBAR (yuqori menyu)
+       ============================================================ */
+header {
+  background-color: #ffffff;
+  padding: 18px 0;
+  /* PADDING: yuqori/past 18px ichki bo'shliq */
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  /* BOX-SHADOW: pastga yengil soya */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #6f4326;
+  /* COLOR: logotip rangi (kofe jigarrangi) */
+}
+
+.logo span {
+  color: #e0922f;
+}
+
+/* "ilic" qism uchun amber accent rang */
+
+.menu {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #2a1c14;
+  padding: 6px 4px;
+  /* PADDING: havola atrofida ichki bo'shliq */
+  border-bottom: 2px solid transparent;
+  /* BORDER: pastdan ko'rinmas chegara */
+  transition: color 0.25s, border-color 0.25s;
+  /* TRANSITION: rang o'zgarishi silliq bo'lsin */
+}
+
+/* HOVER: sichqoncha kelganda rang va pastki chiziq paydo bo'ladi */
+.menu a:hover {
+  color: #e0922f;
+  border-color: #e0922f;
+}
+
+/* ============================================================
+       TUGMA (button) — asosiy amaliyot elementi
+       ============================================================ */
+.btn {
+  display: inline-block;
+  background-color: #6f4326;
+  /* tugma fon rangi */
+  color: #ffffff;
+  /* tugma matni rangi */
+  padding: 14px 28px;
+  /* PADDING: tugmani kattaroq va bosishga qulay qiladi */
+  border: none;
+  border-radius: 30px;
+  /* BORDER-RADIUS: tugma burchaklarini kuchli yumaloqlaydi */
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(111, 67, 38, 0.35);
+  /* BOX-SHADOW: tugma "ko'tarilgan"dek ko'rinadi */
+  /* TRANSITION: transform va soya o'zgarishlari 0.25s da silliq bo'ladi */
+  transition: transform 0.25s, box-shadow 0.25s, background-color 0.25s;
+}
+
+/* HOVER + TRANSFORM: tugma yuqoriga ko'tarilib, kattalashadi */
+.btn:hover {
+  background-color: #5a3520;
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 14px 26px rgba(111, 67, 38, 0.45);
+}
+
+/* Ikkinchi (chegarali) tugma turi */
+.btn-outline {
+  background-color: transparent;
+  color: #6f4326;
+  border: 2px solid #6f4326;
+  /* BORDER: 2px qalin uzluksiz chegara */
+  box-shadow: none;
+}
+
+.btn-outline:hover {
+  background-color: #6f4326;
+  color: #ffffff;
+}
+
+/* ============================================================
+       HERO (asosiy ekran)
+       ============================================================ */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 70px 0;
+  /* PADDING: bo'lim ichida katta bo'shliq */
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.hero-text h1 {
+  font-size: 52px;
+  line-height: 1.1;
+  color: #2a1c14;
+  margin-bottom: 18px;
+  /* MARGIN: sarlavha bilan keyingi matn orasida bo'shliq */
+  text-shadow: 2px 3px 0 #f0d9b8;
+  /* TEXT-SHADOW: sarlavha matniga soya beradi */
+}
+
+.hero-text h1 b {
+  color: #e0922f;
+}
+
+.hero-text p {
+  font-size: 18px;
+  color: #7a6a5c;
+  margin-bottom: 28px;
+  /* MARGIN: matn bilan tugmalar orasida joy */
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Hero rasmi o'rnida rangli, yumaloq quti */
+.hero-visual {
+  flex: 1;
+  min-width: 280px;
+  height: 340px;
+  /* HEIGHT: qutining balandligi */
+  background-color: #6f4326;
+  /* BACKGROUND-COLOR: qutining foni */
+  border-radius: 24px;
+  /* BORDER-RADIUS: katta yumaloq burchaklar */
+  box-shadow: 0 20px 40px rgba(111, 67, 38, 0.30);
+  /* BOX-SHADOW: chuqur soya */
+  display: grid;
+  place-items: center;
+  font-size: 120px;
+  position: relative;
+}
+
+/* TRANSFORM: aylantirilgan "sticker" (yorliq) */
+.sticker {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background-color: #e0922f;
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 50px;
+  /* BORDER-RADIUS: to'liq yumaloq yorliq */
+  font-size: 13px;
+  font-weight: bold;
+  transform: rotate(-12deg);
+  /* TRANSFORM: yorliqni 12 gradusga buradi */
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+  /* TRANSITION: burilish silliq tiklanishi uchun */
+}
+
+/* HOVER: sichqoncha kelganda yorliq to'g'rilanadi va kattalashadi */
+.sticker:hover {
+  transform: rotate(0deg) scale(1.1);
+}
+
+/* ============================================================
+       SECTION sarlavhasi (umumiy)
+       ============================================================ */
+.section-title {
+  text-align: center;
+  font-size: 34px;
+  color: #2a1c14;
+  margin-bottom: 10px;
+}
+
+.section-sub {
+  text-align: center;
+  color: #7a6a5c;
+  margin-bottom: 44px;
+  /* MARGIN: sarlavha bilan kartalar orasida joy */
+}
+
+/* ============================================================
+       FEATURES (afzalliklar kartalari)
+       ============================================================ */
+.features {
+  padding: 70px 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 32px 24px;
+  /* PADDING: karta ichidagi bo'shliq */
+  border: 1px solid #efe3d2;
+  /* BORDER: yengil chegara */
+  border-radius: 18px;
+  /* BORDER-RADIUS: yumaloq burchaklar */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.25s, box-shadow 0.25s;
+  /* TRANSITION: hover effekti silliq */
+}
+
+/* HOVER + TRANSFORM: karta yuqoriga ko'tariladi, soyasi kuchayadi */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.12);
+}
+
+.card .icon {
+  width: 70px;
+  height: 70px;
+  /* WIDTH + HEIGHT: doira o'lchami */
+  background-color: #faf0e0;
+  border-radius: 50%;
+  /* BORDER-RADIUS: 50% — to'liq doira */
+  display: grid;
+  place-items: center;
+  font-size: 34px;
+  margin: 0 auto 18px;
+  /* MARGIN: doirani markazga oladi va pastdan bo'shliq */
+}
+
+.card h3 {
+  color: #6f4326;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: #7a6a5c;
+  font-size: 15px;
+}
+
+/* ============================================================
+       MENU (narxlar kartalari)
+       ============================================================ */
+.menu-section {
+  padding: 70px 0;
+}
+
+.price-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.price {
+  background-color: #ffffff;
+  border: 2px solid #efe3d2;
+  border-radius: 20px;
+  padding: 30px 24px;
+  text-align: center;
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.price:hover {
+  border-color: #e0922f;
+  /* HOVER: chegara rangi amber bo'ladi */
+  transform: scale(1.03);
+  /* TRANSFORM: biroz kattalashadi */
+}
+
+.price .emoji {
+  font-size: 50px;
+}
+
+.price h4 {
+  color: #2a1c14;
+  margin: 10px 0 4px;
+  font-size: 20px;
+}
+
+.price .cost {
+  color: #e0922f;
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+/* ============================================================
+       CTA (chaqiruv bloki)
+       ============================================================ */
+.cta {
+  background-color: #6f4326;
+  /* BACKGROUND-COLOR: to'q jigarrang blok */
+  color: #ffffff;
+  text-align: center;
+  padding: 60px 30px;
+  border-radius: 28px;
+  /* BORDER-RADIUS: blok burchaklari yumaloq */
+  margin: 70px 0;
+  /* MARGIN: blok atrofida tashqi bo'shliq */
+  box-shadow: 0 16px 36px rgba(111, 67, 38, 0.3);
+}
+
+.cta h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+  text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.2);
+  /* TEXT-SHADOW: oq sarlavhaga soya */
+}
+
+.cta p {
+  margin-bottom: 26px;
+  color: #f0d9b8;
+}
+
+.cta .btn {
+  background-color: #e0922f;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+.cta .btn:hover {
+  background-color: #f0a23f;
+}
+
+/* ============================================================
+       FOOTER
+       ============================================================ */
+footer {
+  background-color: #2a1c14;
+  color: #d8c9bb;
+  text-align: center;
+  padding: 30px 0;
+  /* PADDING: footer ichidagi bo'shliq */
+}
+
+footer b {
+  color: #e0922f;
+}
+
+/* ============================================================
+       RESPONSIVE (telefon uchun)
+       ============================================================ */
+@media (max-width: 760px) {
+  .hero-text h1 {
+    font-size: 38px;
+  }
+
+  .cards,
+  .price-cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* kartalarni 1 ustunga tushiradi */
+  .menu {
+    display: none;
+  }
+
+  /* kichik ekranda menyuni yashiradi */
+}
+
